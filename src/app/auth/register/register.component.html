@@ -1,1 +1,55 @@
-Register Component
+<div class="container-fluid row p-5">
+  <div class="col-md-6">
+    <h1>Sign up for Cobiro today</h1>
+    <h4>And Automate your Google Ads</h4>
+  </div>
+  <form class="col-md-6" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title style="font-weight: bold">Create a free Cobiro account below.</mat-card-title>
+        <mat-card-subtitle>Already have an account? <a
+          style="font-weight: bold;text-decoration: underline;cursor:pointer" routerLink="/login">Login here.</a>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content style="margin:0 16px">
+        <div class="d-flex flex-column">
+          <div class="row">
+            <mat-form-field class="col-md-6">
+              <mat-label>E-mail</mat-label>
+              <input matInput placeholder="E-mail" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" formControlName="password" type="password">
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="col-md-6">
+              <mat-label>First name</mat-label>
+              <input matInput placeholder="First name" formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-6">
+              <mat-label>Last name</mat-label>
+              <input matInput placeholder="Last name" formControlName="lastName">
+            </mat-form-field>
+          </div>
+          <mat-form-field>
+            <mat-label>Company location</mat-label>
+            <mat-select formControlName="country">
+              <mat-option *ngFor="let country of countryList" [value]="country.code">
+                {{country.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions style="margin:0 16px">
+        <button mat-button color="primary" type="submit" style="background-color:#fcf22b">Get Started</button>
+        <div style="font-size: 12px" class="mt-2">By clicking this button, you agree to Cobiro’s Terms & Conditions
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

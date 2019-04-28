@@ -4,12 +4,17 @@ import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'list'
-  },
-  {
-    path: 'list',
-    component: ListComponent
+    path: 'site',
+    children: [
+      {
+        path: '',
+        redirectTo: 'list'
+      },
+      {
+        path: 'list',
+        component: ListComponent
+      }
+    ]
   }
 ];
 

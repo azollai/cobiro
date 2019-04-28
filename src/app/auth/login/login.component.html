@@ -1,1 +1,31 @@
-Login Component
+<div class="container-fluid row p-5">
+  <div class="col-md-6">
+    <h1>Welcome back</h1>
+    <h4>Sign in to your account</h4>
+    <p class="mt-5">
+      Over 25,000 online stores use Cobiro - a free tool for Google Ads® - text and shopping ads. It’s an easy-to-use,
+      intelligent advertising platform fully automating keyword planning and bidding.
+    </p>
+  </div>
+  <mat-card class="col-md-6">
+    <mat-card-header>
+      <mat-card-title style="font-weight: bold">Login to your Cobiro account below</mat-card-title>
+      <mat-card-subtitle>Don't have an account? <a
+        style="font-weight: bold;text-decoration: underline;cursor:pointer" routerLink="/sign-up">Sign up here.</a></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="margin:0 16px">
+      <form class="d-flex flex-column">
+        <mat-form-field>
+          <input matInput placeholder="E-mail">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Password">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions style="margin:0 16px">
+      <button mat-button color="primary" style="background-color:#fcf22b">Continue</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
