@@ -1,0 +1,3 @@
+<div *ngIf="formControl?.errors && formControl?.touched">
+  <ng-container *ngIf="formControl?.errors['required']">This field is required</ng-container>
+</div>

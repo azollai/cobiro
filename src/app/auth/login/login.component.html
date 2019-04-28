@@ -7,25 +7,36 @@
       intelligent advertising platform fully automating keyword planning and bidding.
     </p>
   </div>
-  <mat-card class="col-md-6">
-    <mat-card-header>
-      <mat-card-title style="font-weight: bold">Login to your Cobiro account below</mat-card-title>
-      <mat-card-subtitle>Don't have an account? <a
-        style="font-weight: bold;text-decoration: underline;cursor:pointer" routerLink="/sign-up">Sign up here.</a></mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content style="margin:0 16px">
-      <form class="d-flex flex-column">
-        <mat-form-field>
-          <input matInput placeholder="E-mail">
-        </mat-form-field>
+  <form class="col-md-6" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title style="font-weight: bold">Login to your Cobiro account below</mat-card-title>
+        <mat-card-subtitle>Don't have an account? <a
+          style="font-weight: bold;text-decoration: underline;cursor:pointer" routerLink="/sign-up">Sign up here.</a>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content style="margin:0 16px">
+        <div class="d-flex flex-column">
+          <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" formControlName="email">
+            <mat-error>
+              <app-validation [control]="emailControl"></app-validation>
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field>
-          <input matInput placeholder="Password">
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions style="margin:0 16px">
-      <button mat-button color="primary" style="background-color:#fcf22b">Continue</button>
-    </mat-card-actions>
-  </mat-card>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password" type="password">
+            <mat-error>
+              <app-validation [control]="passwordControl"></app-validation>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions style="margin:0 16px">
+        <button [disabled]="form.invalid" mat-button color="primary" style="background-color:#fcf22b">Continue</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
 </div>

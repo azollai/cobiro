@@ -8,6 +8,7 @@ import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, Mat
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { ValidationModule } from '../validation/validation.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,8 @@ import { AuthService } from './auth.service';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+
+    ValidationModule,
 
     FormsModule,
     ReactiveFormsModule
