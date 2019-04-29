@@ -2,7 +2,7 @@
 <div class="d-flex flex-column h-100">
   <mat-toolbar>
     <mat-toolbar-row class="d-flex justify-content-between">
-      <img src="/assets/logo-left.svg" height="36" style="cursor: pointer">
+      <img src="/assets/logo-left.svg" height="36" class="pointer">
 
       <!--Menu-->
       <button *ngIf="authenticated" mat-icon-button [matMenuTriggerFor]="menu">
@@ -11,7 +11,7 @@
 
     </mat-toolbar-row>
   </mat-toolbar>
-  <div style="background-image: url(/assets/cobirobg.png);background-repeat: no-repeat;" class="flex-grow-1 background-img">
+  <div class="flex-grow-1 background-img">
     <router-outlet></router-outlet>
   </div>
 </div>

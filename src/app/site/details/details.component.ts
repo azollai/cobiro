@@ -8,7 +8,8 @@ import { SiteElementModel } from '../model/site-element.model';
 
 @Component({
   selector: 'app-details',
-  templateUrl: 'details.component.html'
+  templateUrl: 'details.component.html',
+  styleUrls: ['details.component.sass']
 })
 export class DetailsComponent implements OnInit {
   siteId: string;

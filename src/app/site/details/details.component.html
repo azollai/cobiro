@@ -1,12 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-5">
-  <mat-card style="max-width: 500px;">
+  <mat-card>
     <mat-card-header>
-      <mat-card-title style="font-weight: bold">
+      <mat-card-title class="bold">
         <ng-container *ngIf="!siteId;else modifyTitle">New site</ng-container>
         <ng-template #modifyTitle>Modify site</ng-template>
       </mat-card-title>
     </mat-card-header>
-    <mat-card-content style="margin:0 16px">
+    <mat-card-content class="margin-0-16">
       <div class="d-flex flex-column">
         <mat-form-field>
           <mat-label>Website</mat-label>
@@ -25,8 +25,8 @@
         </mat-form-field>
       </div>
     </mat-card-content>
-    <mat-card-actions style="margin:0 16px">
-      <button [disabled]="form.invalid" mat-button color="primary" style="background-color:#fcf22b">
+    <mat-card-actions class="margin-0-16">
+      <button [disabled]="form.invalid" mat-button color="primary" class="bg-yellow">
         <ng-container *ngIf="!siteId;else modifySubmit">Create</ng-container>
         <ng-template #modifySubmit>Modify</ng-template>
       </button>

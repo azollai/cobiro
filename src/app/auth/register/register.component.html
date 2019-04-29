@@ -6,12 +6,11 @@
   <form class="col-md-6" [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-header>
-        <mat-card-title style="font-weight: bold">Create a free Cobiro account below.</mat-card-title>
-        <mat-card-subtitle>Already have an account? <a
-          style="font-weight: bold;text-decoration: underline;cursor:pointer" routerLink="/login">Login here.</a>
+        <mat-card-title class="bold">Create a free Cobiro account below.</mat-card-title>
+        <mat-card-subtitle>Already have an account? <a class="link" routerLink="/login">Login here.</a>
         </mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content style="margin:0 16px">
+      <mat-card-content class="margin-0-16">
         <div class="d-flex flex-column">
           <div class="row">
             <mat-form-field class="col-md-6">
@@ -60,9 +59,9 @@
           </mat-form-field>
         </div>
       </mat-card-content>
-      <mat-card-actions style="margin:0 16px">
-        <button [disabled]="form.invalid" mat-button color="primary" type="submit" style="background-color:#fcf22b">Get Started</button>
-        <div style="font-size: 12px" class="mt-2 terms">By clicking this button, you agree to Cobiro’s Terms & Conditions</div>
+      <mat-card-actions class="margin-0-16">
+        <button [disabled]="form.invalid" mat-button color="primary" type="submit" class="bg-yellow">Get Started</button>
+        <div class="mt-2 terms font-12">By clicking this button, you agree to Cobiro’s Terms & Conditions</div>
       </mat-card-actions>
     </mat-card>
   </form>
