@@ -4,7 +4,14 @@ import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './register/register.component';
-import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSnackBarModule
+} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
@@ -20,6 +27,7 @@ import { ValidationModule } from '../validation/validation.module';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    MatSnackBarModule,
 
     ValidationModule,
 

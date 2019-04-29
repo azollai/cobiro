@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { LoginResponseModel } from '../model/login-response.model';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,12 @@ import { LoginResponseModel } from '../model/login-response.model';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  emailControl = new FormControl('', Validators.required);
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
   passwordControl = new FormControl('', Validators.required);
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private matSnackbar: MatSnackBar) { }
 
   ngOnInit() {
     this.initForm();
@@ -24,6 +26,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form.value)
         .subscribe((result: LoginResponseModel) => {
           this.router.navigate(['/site/list']);
+        }, () => {
+          this.matSnackbar.open('Invalid email and password combination');
         });
   }
 
