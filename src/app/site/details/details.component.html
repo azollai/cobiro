@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-5">
+  <mat-card style="max-width: 500px;">
+    <mat-card-header>
+      <mat-card-title style="font-weight: bold">
+        <ng-container *ngIf="!siteId;else modifyTitle">New site</ng-container>
+        <ng-template #modifyTitle>Modify site</ng-template>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="margin:0 16px">
+      <div class="d-flex flex-column">
+        <mat-form-field>
+          <mat-label>Website</mat-label>
+          <input matInput placeholder="Website" formControlName="website">
+          <mat-error>
+            <app-validation [control]="websiteControl"></app-validation>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Language Code</mat-label>
+          <input matInput placeholder="Language Code" formControlName="languageCode">
+          <mat-error>
+            <app-validation [control]="languageCodeControl"></app-validation>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="margin:0 16px">
+      <button [disabled]="form.invalid" mat-button color="primary" style="background-color:#fcf22b">
+        <ng-container *ngIf="!siteId;else modifySubmit">Create</ng-container>
+        <ng-template #modifySubmit>Modify</ng-template>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

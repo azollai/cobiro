@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { countryList } from '../../conf/country-list';
+import { countryList } from '../../utils/conf/country-list';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { LoginResponseModel } from '../model/login-response.model';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
   countryControl = new FormControl('', Validators.required);
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private matSnackbar: MatSnackBar) { }
 
   ngOnInit() {
     this.initForm();
@@ -32,7 +34,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.form.value)
         .subscribe((result: LoginResponseModel) => {
           this.router.navigate(['/site/list']);
-        });
+        }, () => this.matSnackbar.open('Something went wrong', null, { duration: 2000 }));
   }
 
   private initForm() {

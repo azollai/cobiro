@@ -1,11 +1,22 @@
 <!--Toolbar on the top of the application-->
 <div class="d-flex flex-column h-100">
   <mat-toolbar>
-    <mat-toolbar-row>
+    <mat-toolbar-row class="d-flex justify-content-between">
       <img src="/assets/logo-left.svg" height="36" style="cursor: pointer">
+
+      <!--Menu-->
+      <button *ngIf="authenticated" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>settings</mat-icon>
+      </button>
+
     </mat-toolbar-row>
   </mat-toolbar>
   <div style="background-image: url(/assets/cobirobg.png)" class="flex-grow-1 background-img">
     <router-outlet></router-outlet>
   </div>
 </div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="onLogout()">
+    <span>Logout</span>
+  </button>
+</mat-menu>

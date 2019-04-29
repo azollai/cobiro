@@ -35,7 +35,6 @@ import { ValidationModule } from '../validation/validation.module';
     ReactiveFormsModule
   ],
   exports: [],
-  declarations: [LoginComponent, RegisterComponent],
-  providers: [AuthService]
+  declarations: [LoginComponent, RegisterComponent]
 })
 export class AuthModule {}

@@ -8,7 +8,7 @@ import { RegisterPayloadModel } from './model/register-payload.model';
 import { environment } from '../../environments/environment';
 import { LoginResponseModel } from './model/login-response.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
 
   constructor(private http: HttpClient) { }
@@ -53,7 +53,11 @@ export class AuthService {
                );
   }
 
-  logout() {
-    localStorage.removeItem('token');
+  logout(): Observable<void> {
+    return this.http.delete(`${environment.baseUrl}/logout`)
+        .pipe(
+          tap((response: any) => !response ? localStorage.removeItem('token') : () => {})
+        );
+
   }
 }

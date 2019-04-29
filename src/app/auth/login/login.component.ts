@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         .subscribe((result: LoginResponseModel) => {
           this.router.navigate(['/site/list']);
         }, () => {
-          this.matSnackbar.open('Invalid email and password combination');
+          this.matSnackbar.open('Invalid email and password combination', null, { duration: 2000 });
         });
   }
 
