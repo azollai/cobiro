@@ -3,9 +3,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { DebugElement } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -18,7 +19,11 @@ describe('AppComponent', () => {
         BrowserModule,
         BrowserAnimationsModule,
 
+        HttpClientModule,
         MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
         AppRoutingModule,
         RouterTestingModule
       ],

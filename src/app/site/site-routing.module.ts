@@ -8,10 +8,6 @@ const routes: Routes = [
     path: 'site',
     children: [
       {
-        path: '',
-        redirectTo: 'list'
-      },
-      {
         path: 'list',
         component: ListComponent
       },
@@ -22,6 +18,11 @@ const routes: Routes = [
       {
         path: 'details/:id',
         component: DetailsComponent
+      },
+      {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'full'
       }
     ]
   }
